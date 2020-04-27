@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <!-- 别名定义 -->
+        <typeAlias type="com.hfut.entity.Person" alias="person" />
+
+<!--        &lt;!&ndash; 秒杀商家 &ndash;&gt;-->
+<!--        <typeAlias type="com.hfut.entity.Msmerchant" alias="msmerchant" />-->
+<!--        <typeAlias type="com.hfut.vo.msmerchant.MsmerchantVo" alias="msmerchantVo" />-->
+
+<!--        &lt;!&ndash; 秒杀用户 &ndash;&gt;-->
+<!--        <typeAlias type="com.hfut.entity.Msuser" alias="msuser" />-->
+<!--        <typeAlias type="com.hfut.vo.msuser.MsuserVo" alias="msuserVo" />-->
+
+    </typeAliases>
+
+</configuration>
