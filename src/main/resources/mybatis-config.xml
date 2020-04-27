@@ -6,7 +6,7 @@
 <configuration>
     <typeAliases>
         <!-- 别名定义 -->
-        <typeAlias type="com.hfut.entity.Person" alias="person" />
+        <typeAlias type="com.hfut.entity.test.Person" alias="person" />
 
 <!--        &lt;!&ndash; 秒杀商家 &ndash;&gt;-->
 <!--        <typeAlias type="com.hfut.entity.Msmerchant" alias="msmerchant" />-->

@@ -40,7 +40,7 @@
         <property name="mapperLocations">
 <!--        <property name="mapperLocations" value="classpath:PersonDao.xml">-->
             <array>
-                <value>classpath:com/hfut/dao/xml/PersonDao.xml</value>
+                <value>classpath:com/hfut/dao/xml/test/PersonDao.xml</value>
 <!--                <value>classpath:com/hfut/dao/xml/MsmerchantDao.xml</value>-->
 <!--                <value>classpath:com/hfut/dao/xml/MsUserDao.xml</value>-->
             </array>

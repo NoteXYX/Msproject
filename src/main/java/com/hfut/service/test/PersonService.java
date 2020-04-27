@@ -1,7 +1,7 @@
-package com.hfut.service;
+package com.hfut.service.test;
 
-import com.hfut.dao.PersonDao;
-import com.hfut.entity.Person;
+import com.hfut.dao.test.PersonDao;
+import com.hfut.entity.test.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

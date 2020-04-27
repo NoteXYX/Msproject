@@ -1,7 +1,7 @@
-package com.hfut.action;
+package com.hfut.action.test;
 
-import com.hfut.entity.Person;
-import com.hfut.service.PersonService;
+import com.hfut.entity.test.Person;
+import com.hfut.service.test.PersonService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

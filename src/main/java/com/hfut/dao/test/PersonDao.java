@@ -1,6 +1,6 @@
-package com.hfut.dao;
+package com.hfut.dao.test;
 
-import com.hfut.entity.Person;
+import com.hfut.entity.test.Person;
 
 public interface PersonDao {
     public Person querypersonbyid(int id);

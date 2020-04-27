@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hfut.dao.PersonDao">
+<mapper namespace="com.hfut.dao.test.PersonDao">
 
     <select id="querypersonbyid" parameterType="int" resultType="person">
 		select id,name,age,birthday,address from Person where id = #{value}

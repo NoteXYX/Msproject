@@ -1,4 +1,4 @@
-package com.hfut.entity;
+package com.hfut.entity.test;
 
 public class Person {
     private int id;
