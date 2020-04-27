@@ -8,11 +8,11 @@
         <!-- 别名定义 -->
         <typeAlias type="com.hfut.entity.test.Person" alias="person" />
 
-<!--        &lt;!&ndash; 秒杀商家 &ndash;&gt;-->
-<!--        <typeAlias type="com.hfut.entity.Msmerchant" alias="msmerchant" />-->
+        <!-- 秒杀商家 -->
+        <typeAlias type="com.hfut.entity.Msmerchant" alias="msmerchant" />
 <!--        <typeAlias type="com.hfut.vo.msmerchant.MsmerchantVo" alias="msmerchantVo" />-->
 
-<!--        &lt;!&ndash; 秒杀用户 &ndash;&gt;-->
+        <!-- 秒杀用户 -->
 <!--        <typeAlias type="com.hfut.entity.Msuser" alias="msuser" />-->
 <!--        <typeAlias type="com.hfut.vo.msuser.MsuserVo" alias="msuserVo" />-->
 

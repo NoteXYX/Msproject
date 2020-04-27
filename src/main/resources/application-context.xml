@@ -37,11 +37,15 @@
         <!-- 具体指定xml文件，可不配 -->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!-- 自动扫描mapping.xml文件，**表示迭代查找 ,,也可在mybatis-config.xml中单独指定xml文件 -->
+        <!--  IDEA编译器此处注意要在 target/classes 下相应位置存放以下xml文件，
+              否则会报Context initialization failed，因为classpath:对应着target/classes  -->
         <property name="mapperLocations">
+            <!--   单个Dao.xml写法：   -->
 <!--        <property name="mapperLocations" value="classpath:PersonDao.xml">-->
+            <!--  多个Dao.xml写法：   -->
             <array>
                 <value>classpath:com/hfut/dao/xml/test/PersonDao.xml</value>
-<!--                <value>classpath:com/hfut/dao/xml/MsmerchantDao.xml</value>-->
+                <value>classpath:com/hfut/dao/xml/MsmerchantDao.xml</value>
 <!--                <value>classpath:com/hfut/dao/xml/MsUserDao.xml</value>-->
             </array>
         </property>
