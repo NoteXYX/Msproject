@@ -2,12 +2,14 @@ package com.hfut.action;
 
 import com.hfut.entity.Msmerchant;
 import com.hfut.service.MsmerchantService;
+import com.hfut.vo.msmerchant.MsmerchantVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 @RequestMapping("msmerchantAction")
@@ -50,6 +52,11 @@ public class MsmerchantAction {
         Msmerchant msmerchant = msmerchantService.queryMsmerchantByid(id);
         request.setAttribute("msmerchant", msmerchant);
         return "msmerchant/view";
+    }
+
+    public String querybyvo(HttpServletRequest request, MsmerchantVo msmerchantVo) {
+        List<Msmerchant> list = msmerchantService.queryMsmerchantbyvo(msmerchantVo);
+        request.setAttribute("msmerchantVo", msmerchantVo);
     }
 
 

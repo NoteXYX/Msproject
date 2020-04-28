@@ -10,7 +10,7 @@
 
         <!-- 秒杀商家 -->
         <typeAlias type="com.hfut.entity.Msmerchant" alias="msmerchant" />
-<!--        <typeAlias type="com.hfut.vo.msmerchant.MsmerchantVo" alias="msmerchantVo" />-->
+        <typeAlias type="com.hfut.vo.msmerchant.MsmerchantVo" alias="msmerchantVo" />
 
         <!-- 秒杀用户 -->
 <!--        <typeAlias type="com.hfut.entity.Msuser" alias="msuser" />-->

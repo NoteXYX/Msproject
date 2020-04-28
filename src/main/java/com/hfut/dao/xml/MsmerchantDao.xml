@@ -29,4 +29,30 @@
 		select * from msmerchant where id = #{value}
 	</select>
 
+    <sql id="consutomsql" >
+        <if test="msmerchantVo != null">
+            <if test="merchantname!=null and constomMsmerchant.merchantname!=''">
+                and merchantname = "${merchantname}"
+            </if>
+            <if test="merchantshopname!=null and merchantshopname!='' ">
+                and merchantshopname = "${merchantshopname}"
+            </if>
+            <if test="merchantaccount!=null and merchantaccount!='' ">
+                and merchantaccount = "${merchantaccount}"
+            </if>
+            <if test="merchantpassword!=null and merchantpassword!='' ">
+                and merchantpassword = "${merchantpassword}"
+            </if>
+            <if test="merchantscope!=null and merchantscope!='' ">
+                and merchantscope = "${merchantscope}"
+            </if>
+        </if>
+    </sql>
+    <select id="queryMsmerchantbyvo" parameterType="msmerchantVo" resultType="msmerchant">
+        select * from msmerchant
+        <where>
+            <include refid="consutomsql"></include>
+        </where>
+    </select>
+
 </mapper>
