@@ -5,12 +5,12 @@
 
 <configuration>
     <typeAliases>
-        <!-- 别名定义 -->
+        <!-- 别名定义: xxDao.xml里书写方便 -->
         <typeAlias type="com.hfut.entity.test.Person" alias="person" />
 
         <!-- 秒杀商家 -->
         <typeAlias type="com.hfut.entity.Msmerchant" alias="msmerchant" />
-        <typeAlias type="com.hfut.vo.msmerchant.MsmerchantVo" alias="msmerchantVo" />
+        <typeAlias type="com.hfut.vo.MsmerchantVo" alias="msmerchantVo" />
 
         <!-- 秒杀用户 -->
 <!--        <typeAlias type="com.hfut.entity.Msuser" alias="msuser" />-->

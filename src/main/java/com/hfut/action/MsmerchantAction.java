@@ -2,7 +2,7 @@ package com.hfut.action;
 
 import com.hfut.entity.Msmerchant;
 import com.hfut.service.MsmerchantService;
-import com.hfut.vo.msmerchant.MsmerchantVo;
+import com.hfut.vo.MsmerchantVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,9 +54,11 @@ public class MsmerchantAction {
         return "msmerchant/view";
     }
 
+    @RequestMapping("querybyvo")
     public String querybyvo(HttpServletRequest request, MsmerchantVo msmerchantVo) {
         List<Msmerchant> list = msmerchantService.queryMsmerchantbyvo(msmerchantVo);
-        request.setAttribute("msmerchantVo", msmerchantVo);
+        request.setAttribute("msmerchantlist", list);
+        return "msmerchant/list";
     }
 
 

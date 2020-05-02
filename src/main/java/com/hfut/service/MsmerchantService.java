@@ -2,7 +2,7 @@ package com.hfut.service;
 
 import com.hfut.dao.MsmerchantDao;
 import com.hfut.entity.Msmerchant;
-import com.hfut.vo.msmerchant.MsmerchantVo;
+import com.hfut.vo.MsmerchantVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +31,6 @@ public class MsmerchantService {
     }
 
     public List<Msmerchant> queryMsmerchantbyvo(MsmerchantVo msmerchantVo) {//批量查询
-        return queryMsmerchantbyvo(msmerchantVo);
+        return msmerchantDao.queryMsmerchantbyvo(msmerchantVo);
     }
 }

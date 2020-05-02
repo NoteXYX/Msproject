@@ -1,7 +1,7 @@
 package com.hfut.dao;
 
 import com.hfut.entity.Msmerchant;
-import com.hfut.vo.msmerchant.MsmerchantVo;
+import com.hfut.vo.MsmerchantVo;
 
 import java.util.List;
 
