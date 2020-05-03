@@ -26,7 +26,7 @@
 
     <!--  通过id查询商家  -->
     <select id="queryMsmerchantByid" parameterType="int" resultType="msmerchant">
-		select * from msmerchant where id = #{value}
+		select * from msmerchant where id = #{id}
 	</select>
 
     <sql id="consutomsql" >
