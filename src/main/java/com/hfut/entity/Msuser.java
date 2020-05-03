@@ -76,4 +76,18 @@ public class Msuser {
     public void setUseremail(String useremail) {
         this.useremail = useremail;
     }
+
+    @Override
+    public String toString() {
+        return "Msuser{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", useraccount='" + useraccount + '\'' +
+                ", userpassword='" + userpassword + '\'' +
+                ", usersex=" + usersex +
+                ", userage=" + userage +
+                ", useraddress='" + useraddress + '\'' +
+                ", useremail='" + useremail + '\'' +
+                '}';
+    }
 }

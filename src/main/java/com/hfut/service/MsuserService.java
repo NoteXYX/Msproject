@@ -4,9 +4,11 @@ import com.hfut.dao.MsuserDao;
 import com.hfut.entity.Msuser;
 import com.hfut.vo.msuser.MsuserVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MsuserService {
 
     @Autowired

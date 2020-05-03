@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-@RequestMapping("msmerchantAction")
+@RequestMapping("msMerchantAction")
 public class MsmerchantAction {
 
     @Autowired
@@ -24,9 +24,10 @@ public class MsmerchantAction {
     }
 
     @RequestMapping(value="add", method= RequestMethod.POST)
-    public void add(Msmerchant msmerchant) {
+    public String add(Msmerchant msmerchant) {
         msmerchantService.insertMsmerchant(msmerchant);
         System.out.println(msmerchant);
+        return "redirect:querybyvo";
     }
 
     @RequestMapping("toupdate")
@@ -36,15 +37,17 @@ public class MsmerchantAction {
         return "msmerchant/update";
     }
 
-    @RequestMapping("update")
-    public void update(Msmerchant msmerchant) {
+    @RequestMapping(value="update", method= RequestMethod.POST)
+    public String update(Msmerchant msmerchant) {
         msmerchantService.updateMsmerchant(msmerchant);
         System.out.println(msmerchant);
+        return "redirect:querybyvo";
     }
 
     @RequestMapping("del")
-    public void del(HttpServletRequest request, int id) {
+    public String del(HttpServletRequest request, int id) {
         msmerchantService.deleteMsmerchantByid(id);
+        return "redirect:querybyvo";
     }
 
     @RequestMapping("querybyid")

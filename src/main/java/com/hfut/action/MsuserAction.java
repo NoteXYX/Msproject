@@ -1,9 +1,7 @@
 package com.hfut.action;
 
-import com.hfut.entity.Msmerchant;
 import com.hfut.entity.Msuser;
 import com.hfut.service.MsuserService;
-import com.hfut.vo.msmerchant.MsmerchantVo;
 import com.hfut.vo.msuser.MsuserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-@RequestMapping("msuserAction")
+@RequestMapping("msUserAction")
 public class MsuserAction {
 
     @Autowired
