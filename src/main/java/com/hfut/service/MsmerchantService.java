@@ -2,7 +2,7 @@ package com.hfut.service;
 
 import com.hfut.dao.MsmerchantDao;
 import com.hfut.entity.Msmerchant;
-import com.hfut.vo.MsmerchantVo;
+import com.hfut.vo.msmerchant.MsmerchantVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

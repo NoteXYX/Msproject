@@ -2,7 +2,7 @@ package com.hfut.action;
 
 import com.hfut.entity.Msmerchant;
 import com.hfut.service.MsmerchantService;
-import com.hfut.vo.MsmerchantVo;
+import com.hfut.vo.msmerchant.MsmerchantVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,6 +60,5 @@ public class MsmerchantAction {
         request.setAttribute("msmerchantlist", list);
         return "msmerchant/list";
     }
-
 
 }

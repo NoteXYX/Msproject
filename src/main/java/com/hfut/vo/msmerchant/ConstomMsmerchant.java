@@ -1,4 +1,4 @@
-package com.hfut.vo;
+package com.hfut.vo.msmerchant;
 
 import com.hfut.entity.Msmerchant;
 

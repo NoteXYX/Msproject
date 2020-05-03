@@ -2,5 +2,6 @@
 <project version="4">
   <component name="TemplateDataLanguageMappings">
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/msmerchant/view.jsp" dialect="HTML" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/msuser/view.jsp" dialect="HTML" />
   </component>
 </project>

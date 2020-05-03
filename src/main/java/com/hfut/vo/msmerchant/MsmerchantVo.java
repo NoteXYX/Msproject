@@ -1,4 +1,4 @@
-package com.hfut.vo;
+package com.hfut.vo.msmerchant;
 
 public class MsmerchantVo {
     private ConstomMsmerchant constomMsmerchant;
