@@ -24,9 +24,10 @@ public class MsuserAction {
     }
 
     @RequestMapping(value="add", method= RequestMethod.POST)
-    public void add(Msuser msuser) {
+    public String add(Msuser msuser) {
         msuserService.insertMsuser(msuser);
         System.out.println(msuser);
+        return "redirect:querybyvo";
     }
 
     @RequestMapping("toupdate")
@@ -36,15 +37,17 @@ public class MsuserAction {
         return "msuser/update";
     }
 
-    @RequestMapping("update")
-    public void update(Msuser msuser) {
+    @RequestMapping(value = "update", method = RequestMethod.POST)
+    public String update(Msuser msuser) {
         msuserService.updateMsuser(msuser);
         System.out.println(msuser);
+        return "redirect:querybyvo";
     }
 
     @RequestMapping("del")
-    public void del(HttpServletRequest request, int id) {
+    public String del(HttpServletRequest request, int id) {
         msuserService.deleteMsuserByid(id);
+        return "redirect:querybyvo";
     }
 
     @RequestMapping("querybyid")

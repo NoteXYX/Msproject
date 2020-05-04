@@ -13,7 +13,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("msMerchantAction")
-public class MsmerchantAction {
+public class MsMerchantAction {
 
     @Autowired
     MsmerchantService msmerchantService;
