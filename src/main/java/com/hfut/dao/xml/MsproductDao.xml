@@ -19,34 +19,6 @@
 
     <!--  sql通用条件  -->
     <sql id="consutomsql" >
-        `id` int(100) NOT NULL AUTO_INCREMENT COMMENT '主键',
-        `productid` int(100) DEFAULT NULL COMMENT '商品id',
-        `producttitle` varchar(50) DEFAULT NULL COMMENT '标题',
-        `productpic` varchar(50) DEFAULT NULL COMMENT '商品图片',
-        `originalprice` int(20) DEFAULT NULL COMMENT '原价格',
-        `miaoshaprice` int(20) DEFAULT NULL COMMENT '秒杀价格',
-        `merchantid` int(100) DEFAULT NULL COMMENT '商家id',
-        `applydate` datetime DEFAULT NULL COMMENT '添加时间',
-        `auditdate` datetime DEFAULT NULL COMMENT '审核时间',
-        `auditstate` int(2) DEFAULT NULL COMMENT '审核状态: 1代表未审核、2代表审核通过、3代表审核不通过',
-        `starttime` datetime DEFAULT NULL COMMENT '秒杀开始时间',
-        `endtime` datetime DEFAULT NULL COMMENT '秒杀结束时间',
-        `productcount` int(20) DEFAULT NULL COMMENT '商品数量',
-        `stockcount` int(20) DEFAULT NULL COMMENT '剩余库存数',
-        `description` varchar(1500) DEFAULT NULL COMMENT '商品描述',
-        PRIMARY KEY (`id`)
-        private int startmiaoshaprice;  //秒杀价格范围开始
-        private int endmiaoshaprice;  //秒杀价格范围结束
-        private int startoriginalprice;  //原价格范围开始
-        private int endoriginalprice;  //原价格范围结束
-        private Date startapplydate;   //申请时间范围开始
-        private Date endapplydate;   //申请时间范围开始
-        private Date startauditdate;   //审核时间范围开始
-        private Date endauditdate;   //审核时间范围开始
-        private Date startstarttime;   //秒杀开始时间范围开始
-        private Date endstarttime;   //秒杀开始时间范围开始
-        private Date startendtime;   //秒杀结束时间范围开始
-        private Date endendtime;   //秒杀结束时间范围开始
         <if test="constomProduct != null">
             <if test="constomProduct.productid!=null and constomProduct.productid!=''">
                 and productid = "${constomProduct.productid}"
@@ -54,32 +26,59 @@
             <if test="constomProduct.producttitle!=null and constomProduct.producttitle!=''">
                 and producttitle like "%${constomProduct.producttitle}%"
             </if>
-            <if test="constomProduct.originalprice!=null and constomProduct.originalprice!=''">
-                and originalprice >= "${constomProduct.originalprice}"
+            <if test="constomProduct.startoriginalprice!=null and constomProduct.startoriginalprice!=''">
+                and originalprice <![CDATA[ >= ]]> "${constomProduct.startoriginalprice}"
             </if>
-            <if test="constomProduct.miaoshaprice!=null and constomProduct.miaoshaprice!=''">
-                and miaoshaprice = "${constomProduct.miaoshaprice}"
+            <if test="constomProduct.endoriginalprice!=null and constomProduct.endoriginalprice!=''">
+                and originalprice <![CDATA[ <= ]]> "${constomProduct.endoriginalprice}"
             </if>
-            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
-                and productid = "${constomProduct.productid}"
+            <if test="constomProduct.startmiaoshaprice!=null and constomProduct.startmiaoshaprice!=''">
+                and miaoshaprice <![CDATA[ >= ]]> "${constomProduct.startmiaoshaprice}"
             </if>
-            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
-                and productid = "${constomProduct.productid}"
+            <if test="constomProduct.endmiaoshaprice!=null and constomProduct.endmiaoshaprice!=''">
+                and miaoshaprice <![CDATA[ <= ]]> "${constomProduct.endmiaoshaprice}"
             </if>
-            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
-                and productid = "${constomProduct.productid}"
+            <if test="constomProduct.startapplydate!=null and constomProduct.startapplydate!=''">
+                and applydate <![CDATA[ >= ]]> "${constomProduct.startapplydate}"
             </if>
-            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
-                and productid = "${constomProduct.productid}"
+            <if test="constomProduct.endapplydate!=null and constomProduct.endapplydate!=''">
+                and applydate <![CDATA[ <= ]]> "${constomProduct.endapplydate}"
             </if>
-            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
-                and productid = "${constomProduct.productid}"
+            <if test="constomProduct.startauditdate!=null and constomProduct.startauditdate!=''">
+                and auditdate <![CDATA[ >= ]]> "${constomProduct.startauditdate}"
             </if>
-            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
-                and productid = "${constomProduct.productid}"
+            <if test="constomProduct.endauditdate!=null and constomProduct.endauditdate!=''">
+                and auditdate <![CDATA[ <= ]]> "${constomProduct.endauditdate}"
             </if>
-            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
-                and productid = "${constomProduct.productid}"
+            <if test="constomProduct.auditstate!=null and constomProduct.auditstate!=''">
+                and auditstate = "${constomProduct.auditstate}"
+            </if>
+            <if test="constomProduct.startstarttime!=null and constomProduct.startstarttime!=''">
+                and starttime <![CDATA[ >= ]]> "${constomProduct.startstarttime}"
+            </if>
+            <if test="constomProduct.endstarttime!=null and constomProduct.endstarttime!=''">
+                and starttime <![CDATA[ <= ]]> "${constomProduct.endstarttime}"
+            </if>
+            <if test="constomProduct.startendtime!=null and constomProduct.startendtime!=''">
+                and endtime <![CDATA[ >= ]]> "${constomProduct.startendtime}"
+            </if>
+            <if test="constomProduct.endendtime!=null and constomProduct.endendtime!=''">
+                and endtime <![CDATA[ <= ]]> "${constomProduct.endendtime}"
+            </if>
+            <if test="constomProduct.minProductcount!=null and constomProduct.minProductcount!=''">
+                and productcount <![CDATA[ >= ]]> "${constomProduct.minProductcount}"
+            </if>
+            <if test="constomProduct.maxProductcount!=null and constomProduct.maxProductcount!=''">
+                and productcount <![CDATA[ <= ]]> "${constomProduct.maxProductcount}"
+            </if>
+            <if test="constomProduct.minStockcount!=null and constomProduct.minStockcount!=''">
+                and stockcount <![CDATA[ >= ]]> "${constomProduct.minStockcount}"
+            </if>
+            <if test="constomProduct.maxStockcount!=null and constomProduct.maxStockcount!=''">
+                and stockcount <![CDATA[ <= ]]> "${constomProduct.maxStockcount}"
+            </if>
+            <if test="constomProduct.description!=null and constomProduct.description!=''">
+                and description like "%${constomProduct.description}%"
             </if>
         </if>
     </sql>

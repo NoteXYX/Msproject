@@ -2,6 +2,7 @@ package com.hfut.service;
 
 import com.hfut.dao.MsproductDao;
 import com.hfut.entity.Msproductinfo;
+import com.hfut.vo.msproduct.MsproductVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,5 +34,10 @@ public class MsproductService {
         msproductinfo.setAuditstate(1);
         msproductDao.applymsproduct(msproductinfo);
     }
+
+    public List<Msproductinfo> listmsproduct(MsproductVo msproductVo) {    //批量查询秒杀商品
+        return msproductDao.listmsproduct(msproductVo);
+    }
+
 
 }
