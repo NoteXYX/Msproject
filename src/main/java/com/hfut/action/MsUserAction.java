@@ -13,7 +13,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("msUserAction")
-public class MsuserAction {
+public class MsUserAction {
 
     @Autowired
     MsuserService msuserService;

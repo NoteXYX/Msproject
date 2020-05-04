@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hfut.dao.MsproductDao">
+
+    <!--  申请秒杀商品 id名称要与Dao接口中的名称相同 -->
+    <insert id="applymsproduct" parameterType="msproductinfo">
+        <!-- 自动生成自增式id -->
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into msproductinfo(productid,producttitle,productpic,originalprice,miaoshaprice,merchantid,
+                applydate, auditstate, starttime, endtime, productcount, stockcount, description)
+        value(#{productid},#{producttitle},#{productpic},#{originalprice},#{miaoshaprice},#{merchantid},
+              #{applydate}, #{auditstate},#{starttime},#{endtime},#{productcount},#{stockcount},#{description})
+    </insert>
+
+    <!--  sql通用条件  -->
+    <sql id="consutomsql" >
+        `id` int(100) NOT NULL AUTO_INCREMENT COMMENT '主键',
+        `productid` int(100) DEFAULT NULL COMMENT '商品id',
+        `producttitle` varchar(50) DEFAULT NULL COMMENT '标题',
+        `productpic` varchar(50) DEFAULT NULL COMMENT '商品图片',
+        `originalprice` int(20) DEFAULT NULL COMMENT '原价格',
+        `miaoshaprice` int(20) DEFAULT NULL COMMENT '秒杀价格',
+        `merchantid` int(100) DEFAULT NULL COMMENT '商家id',
+        `applydate` datetime DEFAULT NULL COMMENT '添加时间',
+        `auditdate` datetime DEFAULT NULL COMMENT '审核时间',
+        `auditstate` int(2) DEFAULT NULL COMMENT '审核状态: 1代表未审核、2代表审核通过、3代表审核不通过',
+        `starttime` datetime DEFAULT NULL COMMENT '秒杀开始时间',
+        `endtime` datetime DEFAULT NULL COMMENT '秒杀结束时间',
+        `productcount` int(20) DEFAULT NULL COMMENT '商品数量',
+        `stockcount` int(20) DEFAULT NULL COMMENT '剩余库存数',
+        `description` varchar(1500) DEFAULT NULL COMMENT '商品描述',
+        PRIMARY KEY (`id`)
+        private int startmiaoshaprice;  //秒杀价格范围开始
+        private int endmiaoshaprice;  //秒杀价格范围结束
+        private int startoriginalprice;  //原价格范围开始
+        private int endoriginalprice;  //原价格范围结束
+        private Date startapplydate;   //申请时间范围开始
+        private Date endapplydate;   //申请时间范围开始
+        private Date startauditdate;   //审核时间范围开始
+        private Date endauditdate;   //审核时间范围开始
+        private Date startstarttime;   //秒杀开始时间范围开始
+        private Date endstarttime;   //秒杀开始时间范围开始
+        private Date startendtime;   //秒杀结束时间范围开始
+        private Date endendtime;   //秒杀结束时间范围开始
+        <if test="constomProduct != null">
+            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
+                and productid = "${constomProduct.productid}"
+            </if>
+            <if test="constomProduct.producttitle!=null and constomProduct.producttitle!=''">
+                and producttitle like "%${constomProduct.producttitle}%"
+            </if>
+            <if test="constomProduct.originalprice!=null and constomProduct.originalprice!=''">
+                and originalprice >= "${constomProduct.originalprice}"
+            </if>
+            <if test="constomProduct.miaoshaprice!=null and constomProduct.miaoshaprice!=''">
+                and miaoshaprice = "${constomProduct.miaoshaprice}"
+            </if>
+            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
+                and productid = "${constomProduct.productid}"
+            </if>
+            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
+                and productid = "${constomProduct.productid}"
+            </if>
+            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
+                and productid = "${constomProduct.productid}"
+            </if>
+            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
+                and productid = "${constomProduct.productid}"
+            </if>
+            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
+                and productid = "${constomProduct.productid}"
+            </if>
+            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
+                and productid = "${constomProduct.productid}"
+            </if>
+            <if test="constomProduct.productid!=null and constomProduct.productid!=''">
+                and productid = "${constomProduct.productid}"
+            </if>
+        </if>
+    </sql>
+
+    <!--  批量查询用户  -->
+    <select id="listmsproduct" parameterType="msproductVo" resultType="msproductinfo">
+        select * from msproductinfo
+        <where>
+            <include refid="consutomsql"/>
+        </where>
+    </select>
+
+</mapper>

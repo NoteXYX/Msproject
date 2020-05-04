@@ -5,8 +5,9 @@
 
 <mapper namespace="com.hfut.dao.MsuserDao">
 
-    <!--  增加商家  -->
+    <!--  增加用户 id名称要与Dao接口中的名称相同 -->
     <insert id="insertMsuser" parameterType="msuser">
+        <!-- 自动生成自增式id -->
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
@@ -14,22 +15,23 @@
                     value(#{username},#{useraccount},#{userpassword},#{usersex},#{userage},#{useraddress},#{useremail})
     </insert>
 
-    <!--  通过id删除商家  -->
+    <!--  通过id删除用户  -->
     <delete id="deleteMsuserByid" parameterType="int">
         delete from msuser where id = #{id}
     </delete>
 
-    <!--  修改更新商家  -->
+    <!--  修改更新用户  -->
     <update id="updateMsuser" parameterType="msuser">
         update msuser set username=#{username},useraccount=#{useraccount},userpassword=#{userpassword},
         usersex=#{usersex},userage=#{userage},useraddress=#{useraddress},useremail=#{useremail} where id=#{id}
     </update>
 
-    <!--  通过id查询商家  -->
+    <!--  通过id查询用户  -->
     <select id="queryMsuserByid" parameterType="int" resultType="msuser">
 		select * from msuser where id = #{id}
 	</select>
 
+    <!--  sql通用条件  -->
     <sql id="consutomsql" >
         <if test="constomMsuser != null">
             <if test="constomMsuser.username!=null and constomMsuser.username!=''">
@@ -56,6 +58,7 @@
         </if>
     </sql>
 
+    <!--  批量查询用户  -->
     <select id="queryMsuserbyvo" parameterType="msuserVo" resultType="msuser">
         select * from msuser
         <where>

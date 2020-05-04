@@ -16,6 +16,10 @@
         <typeAlias type="com.hfut.entity.Msuser" alias="msuser" />
         <typeAlias type="com.hfut.vo.msuser.MsuserVo" alias="msuserVo" />
 
+        <!-- 秒杀商品 -->
+        <typeAlias type="com.hfut.entity.Msproductinfo" alias="msproductinfo" />
+        <typeAlias type="com.hfut.vo.msproduct.MsproductVo" alias="msproductVo" />
+
     </typeAliases>
 
 </configuration>

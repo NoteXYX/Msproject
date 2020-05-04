@@ -49,6 +49,7 @@
                 <value>classpath:com/hfut/dao/xml/test/PersonDao.xml</value>
                 <value>classpath:com/hfut/dao/xml/MsmerchantDao.xml</value>
                 <value>classpath:com/hfut/dao/xml/MsuserDao.xml</value>
+                <value>classpath:com/hfut/dao/xml/MsproductDao.xml</value>
             </array>
         </property>
     </bean>
