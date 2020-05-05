@@ -17,6 +17,23 @@
               #{applydate}, #{auditstate},#{starttime},#{endtime},#{productcount},#{stockcount},#{description})
     </insert>
 
+    <!--  通过id删除秒杀商品  -->
+    <delete id="delmsproductByid" parameterType="int">
+        delete from msproductinfo where id = #{id}
+    </delete>
+
+    <!--  修改更新秒杀商品  -->
+    <update id="updatemsproduct" parameterType="msproductinfo">
+        update msproductinfo set producttitle=#{producttitle},productpic=#{productpic},originalprice=#{originalprice},
+        miaoshaprice=#{miaoshaprice},starttime=#{starttime},endtime=#{endtime},productcount=#{productcount},
+        stockcount=#{stockcount},description=#{description} where id=#{id}
+    </update>
+
+    <!--  通过id查询秒杀商品  -->
+    <select id="querymsproductByid" parameterType="int" resultType="msproductinfo">
+		select * from msproductinfo where id = #{id}
+	</select>
+
     <!--  sql通用条件  -->
     <sql id="consutomsql" >
         <if test="constomProduct != null">
@@ -90,5 +107,11 @@
             <include refid="consutomsql"/>
         </where>
     </select>
+
+    <!--  更新秒杀商品审核状态  -->
+    <update id="updatemsproductState" parameterType="msproductVo">
+        update msproductinfo set auditstate=#{constomProduct.auditstate} where id=#{constomProduct.id}
+    </update>
+
 
 </mapper>
