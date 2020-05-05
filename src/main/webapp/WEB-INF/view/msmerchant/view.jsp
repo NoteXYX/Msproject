@@ -4,7 +4,7 @@
     <title>商家查询</title>
 </head>
 <body>
-<form action="add">
+<form>
     商家姓名:${msmerchant.merchantname}</br>
     商家店铺名称:${msmerchant.merchantshopname}</br>
     商家账号:${msmerchant.merchantaccount}</br>

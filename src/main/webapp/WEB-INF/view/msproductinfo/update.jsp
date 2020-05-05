@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>申请秒杀商品</title>
+    <title>修改秒杀商品</title>
 </head>
 <body>
 <form action="updatemsproduct" method="post">

@@ -57,6 +57,7 @@ public class MsProductAction {
     @RequestMapping(value = "updatemsproduct")
     public String updatemsproduct(Msproductinfo msproductinfo) {
         msproductService.updatemsproduct(msproductinfo);
+        System.out.println(msproductinfo);
         return "redirect:listmsproduct";
     }
 
@@ -77,7 +78,7 @@ public class MsProductAction {
     @RequestMapping(value = "updatemsproductState")
     public String updatemsproductState(int id, int state) {
         msproductService.updatemsproductState(id, state);
-        return "msproductinfo/list";
+        return "redirect:listmsproduct";
     }
 
 }

@@ -4,7 +4,7 @@
     <title>用户查询</title>
 </head>
 <body>
-<form action="add" method="post">
+<form>
     用户姓名:${msuser.username}</br>
     用户账号:${msuser.useraccount}</br>
     用户密码:${msuser.userpassword}</br>

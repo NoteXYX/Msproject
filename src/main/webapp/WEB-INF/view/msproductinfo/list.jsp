@@ -33,12 +33,12 @@
             <td>${item.merchantid}</td>
             <td>${item.applydate}</td>
             <td>${item.auditstate}</td>
-            <td>${item.starttimeStr}</td>
-            <td>${item.endtimeStr}</td>
+            <td>${item.starttime}</td>
+            <td>${item.endtime}</td>
             <td>${item.productcount}</td>
             <td>${item.stockcount}</td>
             <td>${item.description}</td>
-            <td><a href="toupdate?id=${item.id}">修改</a>||<a href="del?id=${item.id}">删除</a>||<a href="querybyid?id=${item.id}">查看</a></td>
+            <td><a href="toupdatemsproduct?id=${item.id}">修改</a>||<a href="delmsproductByid?id=${item.id}">删除</a>||<a href="querymsproductByid?id=${item.id}">查看</a></td>
         </tr>
     </c:forEach>
 </table>

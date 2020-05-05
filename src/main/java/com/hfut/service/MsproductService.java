@@ -39,6 +39,7 @@ public class MsproductService {
     public void delmsproductByid(int id) {  //根据id删除秒杀商品
         msproductDao.delmsproductByid(id);
     }
+
     public void updatemsproduct(Msproductinfo msproductinfo) {  //修改更新秒杀商品
         msproductDao.updatemsproduct(msproductinfo);
     }
