@@ -5,7 +5,8 @@
 </head>
 <body>
 <form action="updatemsproduct" method="post">
-    商品id:<input name="productid" value="${msproductinfo.productid}"></br>
+    <input name="id" value="${msproductinfo.id }" type="hidden">    <%-- 没有这一行无法更新成功！--%>
+<%--    商品id:<input name="productid" value="${msproductinfo.productid}"></br>--%>
     商品标题:<input name="producttitle" value="${msproductinfo.producttitle}"></br>
     商品图片地址:<input name="productpic" value="${msproductinfo.productpic}"></br>
     原价格:<input name="originalprice" value="${msproductinfo.originalprice}"></br>

@@ -54,7 +54,7 @@ public class MsProductAction {
         return "msproductinfo/update";
     }
 
-    @RequestMapping(value = "updatemsproduct")
+    @RequestMapping(value = "updatemsproduct", method=RequestMethod.POST)
     public String updatemsproduct(Msproductinfo msproductinfo) {
         msproductService.updatemsproduct(msproductinfo);
         System.out.println(msproductinfo);

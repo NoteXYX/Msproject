@@ -41,8 +41,20 @@ public class MsproductService {
     }
 
     public void updatemsproduct(Msproductinfo msproductinfo) {  //修改更新秒杀商品
+        String starttimeStr = msproductinfo.getStarttimeStr(); //获取字符串类型的开始时间
+        String endtimeStr = msproductinfo.getEndtimeStr();
+        DateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date starttimedate = dateformat.parse(starttimeStr);
+            msproductinfo.setStarttime(starttimedate);
+            Date endtimedate = dateformat.parse(endtimeStr);
+            msproductinfo.setEndtime(endtimedate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         msproductDao.updatemsproduct(msproductinfo);
     }
+
     public Msproductinfo querymsproductByid(int id) {   //根据商品id查询秒杀商品
         return msproductDao.querymsproductByid(id);
     }
